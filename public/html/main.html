@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/site.css">
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+      <h1 class="text-primary text-center">Tic Tac Toe</h1>
+      <div>
+
+      </div>
+    <table id = "mytable" align="center">
+        <tr id = 1>
+            <td class="belowborder" id = 1>   </td>
+            <td class="leftandrightborder" id = 2>   </td>
+            <td class="belowborder" id = 3>   </td>
+        </tr>
+        <tr id = 2>
+            <td id = 1>   </td>
+            <td class="fullborder" id = 2>   </td>
+            <td id = 3>   </td>
+        </tr>
+        <tr id = 3>
+            <td class="topborder" id = 1>   </td>
+            <td class="leftandrightborder" id = 2>   </td>
+            <td class="topborder" id = 3>   </td>
+        </tr>
+    </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        var firstPersonTurn = "true";
+        var arr = new Array(3);
+        arr[0] = new Array(3);
+        arr[1] = new Array(3);
+        arr[2] = new Array(3);
+
+        $("#mytable td").click(function(){
+            var column_no = parseInt($(this).index()) + 1;
+            var row_no = parseInt($(this).parent().index())+1;
+            //alert(row_no +" " +column_no);
+            if(firstPersonTurn)
+            {
+                $(this).text("X");
+                firstPersonTurn = false;
+                arr[row_no -1][column_no -1] = "X";
+            }
+            else
+            {
+                $(this).text("O");
+                firstPersonTurn = true;
+                arr[row_no -1][column_no -1] = "O";
+            }
+        })
+    </script>
+  </body>
+</html>
