@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/zarc1411/zarc1411-week2#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
